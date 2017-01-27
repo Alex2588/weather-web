@@ -1,0 +1,7 @@
+{
+   "/search": {
+      "target": "http://autocomplete.wunderground.com",
+      "secure": false,
+      "pathRewrite": {"^/search" : ""}
+   }
+}
