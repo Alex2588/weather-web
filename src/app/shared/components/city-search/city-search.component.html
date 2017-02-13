@@ -1,0 +1,15 @@
+<form class="navbar-form navbar-right" role="search">
+  <div class="form-group">
+      <input type="text" 
+      class="form-control"  
+      placeholder="Search city..." 
+      name="citySearch"
+      [(ngModel)]="citySearch"
+      (keyup)="getCities()">
+  </div>
+  <div class="list-group" *ngIf="cities" [@showResults]="state">
+    <a class="list-group-item" *ngFor="let city of cities">
+      <span (click)="selectCity(city)">{{ city.name }}</span>
+    </a>
+  </div>
+</form>  

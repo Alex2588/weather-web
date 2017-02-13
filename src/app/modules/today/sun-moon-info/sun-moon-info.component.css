@@ -1,0 +1,56 @@
+div.sun-moon-wrapper{
+    width: 100%;
+    height: 454px;
+    background-color: #fff;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    border:1px solid #ddd;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    background-clip: padding-box;
+    opacity: 0.97;
+    filter: alpha(opacity=97);
+}
+div.sun-moon-wrapper>div>h5{
+    color: #000;
+    border-bottom: 1px solid #000;
+    margin: 20px 7px 20px 7px;
+}
+div.sun-moon-wrapper>div>h6{
+    color: #000;
+    margin-top: 40px;
+    margin-left: 7px;
+    margin-bottom: 10px;
+}
+div.sun-info, div.moon-info{
+    margin-left: 7px;
+    margin-right: 7px;
+    margin-bottom: 5px;
+    background: #d3d3d3;
+    border:1px solid #ddd;
+    height: 50px;
+    padding-top: 12px;
+}
+span.moon-info-title{
+    margin-left: 10px;
+    color: #0000ff;
+    font-size: 15px;
+}
+span.sun-info-title{
+    margin-left: 10px;
+    color: #ff8c00;
+    font-size: 15px;
+}
+span.sun-info-data, span.moon-info-data{
+    color: #000;
+    margin-right: 10px;
+    float: right;
+    font-weight: 500;
+}
+span.moon-info-phase{
+    float:right;
+    color: #0000ff;
+    margin-right: 10px;
+    font-weight: 400;
+}

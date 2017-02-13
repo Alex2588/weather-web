@@ -1,0 +1,17 @@
+.sebm-google-map-container {
+  height: 350px;
+  width: 100%;
+  float: right;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  border:1px solid #ddd;
+  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  background-clip: padding-box;
+  opacity: 0.97;
+  filter: alpha(opacity=97);
+}
+.sebm-google-map-container-inner {
+  width: 100%!important;
+}

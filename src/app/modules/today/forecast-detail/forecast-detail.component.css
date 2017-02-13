@@ -1,0 +1,33 @@
+.detail-container{
+    border:1px solid #fff;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+.detail-table{
+    height: 350px;
+    background-color: #fff;
+}
+.detail-table > h5, h6{
+    color: #000;
+    margin-left: 10px;
+}
+.detail-table > hr{
+    margin-left: 7px;
+    margin-right: 7px;
+}
+.detail-table > h5{
+    margin-bottom: 30px;
+}
+.detail-card{
+    height: 350px;
+    display: inline-block;
+    background-image: url('../../../assets/img/forecast-detail.jpg');
+    padding-top: 5px;
+}
+.detail-card > h6{
+    color: #000
+}
+.detail-card > hr{
+    border-color: lightblue
+}

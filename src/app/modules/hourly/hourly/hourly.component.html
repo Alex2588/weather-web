@@ -1,0 +1,45 @@
+<div class="col-md-12">
+    <h4 class="text-center">Hourly forecast</h4>
+    <div class="center-block" *ngIf="isLoading">
+        <i class="fa fa-spinner fa-spin fa-5x"></i>
+    </div>
+    <div class="cold-md-10" *ngIf="hourlyForecast">
+        <h5>{{ currentCity.name }}</h5>
+        <table class="table" [@showPage]="state">
+            <thead>
+                <tr>
+                    <th>HOUR/DAY</th>
+                    <th>WEATHER ICON</th>
+                    <th>DESCRIPTION</th>
+                    <th>TEMP, &deg;C</th>
+                    <th>HUMIDITY</th>
+                    <th>WIND</th>
+                    <th>DEWPOINT, &deg;C</th>
+                    <th>FEELS_LIKE, &deg;C</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let hourlyInfo of hourlyForecast">
+                    <td>
+                        <span>{{ hourlyInfo.FCTTIME.civil }}</span><br>
+                        <span>{{hourlyInfo.FCTTIME.weekday_name_abbrev }}, 
+                              {{ hourlyInfo.FCTTIME.mday }} 
+                              {{ hourlyInfo.FCTTIME.month_name_abbrev }}
+                        </span>
+                    </td>
+                    <td>
+                        <div>
+                            <img [src]="hourlyInfo.icon_url">
+                        </div>
+                    </td>
+                    <td>{{ hourlyInfo.condition }}</td>
+                    <td>{{ hourlyInfo.temp.metric }}</td>
+                    <td>{{ hourlyInfo.humidity }} %</td>
+                    <td>{{ hourlyInfo.wdir.dir }} {{ hourlyInfo.wspd.metric }} km/h</td>
+                    <td>{{ hourlyInfo.dewpoint.metric }}</td>
+                    <td>{{ hourlyInfo.feelslike.metric }}</td>                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

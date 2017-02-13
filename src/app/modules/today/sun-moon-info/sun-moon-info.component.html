@@ -1,0 +1,31 @@
+<div class="col-md-3">
+    <div class="sun-moon-wrapper" *ngIf="sunMoonInfo">
+        <div class="text-center">
+            <h5>SUN&MOON</h5>
+        </div> 
+        <div>
+            <h6>Sun Info</h6>
+        </div>
+        <div class="sun-info">
+            <span class="sun-info-title">Sunrise</span>
+            <span class="sun-info-data">{{ sunMoonInfo.sunrise.hour }}:{{ sunMoonInfo.sunrise.minute }}</span>
+        </div>
+        <div class="sun-info">
+            <span class="sun-info-title">Sunset</span>
+            <span class="sun-info-data">{{ sunMoonInfo.sunset.hour }}:{{ sunMoonInfo.sunset.minute }}</span>
+        </div>
+        <div>
+            <h6>Moon Phase: 
+                <span class="moon-info-phase">{{ sunMoonInfo.phaseofMoon }}</span>
+            </h6>
+        </div>
+        <div class="moon-info">
+            <span class="moon-info-title">Moonrise</span>
+            <span class="moon-info-data">{{ sunMoonInfo.moonrise.hour }}:{{ sunMoonInfo.moonrise.minute }}</span>
+        </div>
+        <div class="moon-info">
+            <span class="moon-info-title">Moonset</span>
+            <span class="moon-info-data">{{ sunMoonInfo.moonset.hour }}:{{ sunMoonInfo.moonset.minute }}</span>
+        </div>
+    </div>
+</div>

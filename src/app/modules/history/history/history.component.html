@@ -1,0 +1,136 @@
+<div class="col-md-12">
+    <h4>{{ currentCity.name }}</h4>
+    <form #form="ngForm" (ngSubmit)="getSelectedHistory($event)" novalidate>
+            <div class="col-md-2">
+                <label for="month">Month:</label>
+                <select class="form-control" [(ngModel)]="selectedMonth" name="selectedMonth" id="month">
+                    <option *ngFor="let month of months"  value="{{ month.value }}">{{ month.title }}</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="date">Date:</label>
+                <select class="form-control" [(ngModel)]="selectedDate" name="selectedDay" id="date">
+                    <option *ngFor="let date of dateList" value="{{ date }}">{{ date }}</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="year">Year:</label>
+                <input type="text" id="year"
+                                   name="selectedYear" 
+                                   class="form-control" 
+                                   [(ngModel)]="selectedYear" 
+                                   (focus)="selectedYear = ''"
+                                   [class.error]="form.controls.selectedYear?.invalid && form.controls.selectedYear?.touched"
+                                   pattern="^\d{4}"
+                                   required>
+            <em *ngIf="form.controls.selectedYear?.invalid && form.controls.selectedYear?.touched 
+                       && form.controls.selectedYear?.errors.required">This field is required</em>
+            <em *ngIf="form.controls.selectedYear?.invalid && form.controls.selectedYear?.touched 
+                        && form.controls.selectedYear?.errors.pattern">Should have 4 chars (only numbers)</em>
+            </div>           
+            <button class="btn btn-info" [disabled]="form.invalid">Search</button>
+    </form>
+    <div class="center-block" *ngIf="isLoading">
+        <i class="fa fa-spinner fa-spin fa-5x"></i>
+    </div>
+    <div class="history-results" [@showPage]="state" *ngIf="historyForecast">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>TITLE</th>
+                    <th>VALUE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="main-row">
+                    <td>Date</td>
+                    <td>{{ historyForecast.date.pretty }}</td>
+                </tr>
+                <tr class="main-row">
+                    <td>Temperature, &deg;C</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Average</td>
+                    <td>{{ historyForecast.dailysummary[0].meantempm }}</td>
+                </tr>
+                <tr>
+                    <td>Min</td>
+                    <td>{{ historyForecast.dailysummary[0].mintempm }}</td>
+                </tr>
+                <tr>
+                    <td>Max</td>
+                    <td>{{ historyForecast.dailysummary[0].maxtempm }}</td>
+                </tr>
+                <tr class="main-row">
+                    <td>Humidity, %</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Min</td>
+                    <td>{{ historyForecast.dailysummary[0].minhumidity }}</td>
+                </tr>
+                <tr>
+                    <td>Max</td>
+                    <td>{{ historyForecast.dailysummary[0].maxhumidity }}</td>
+                </tr>
+                <tr class="main-row">
+                    <td>Dewpoint, &deg;C</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Min</td>
+                    <td>{{ historyForecast.dailysummary[0].mindewptm }}</td>
+                </tr>
+                <tr>
+                    <td>Max</td>
+                    <td>{{ historyForecast.dailysummary[0].maxdewptm }}</td>
+                </tr>
+                <tr class="main-row">
+                    <td>Wind, km/h</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Average</td>
+                    <td>{{ historyForecast.dailysummary[0].meanwindspdm }}</td>
+                </tr>
+                <tr>
+                    <td>Min</td>
+                    <td>{{ historyForecast.dailysummary[0].minwspdm }}</td>
+                </tr>
+                <tr>
+                    <td>Max</td>
+                    <td>{{ historyForecast.dailysummary[0].maxwspdm }}</td>
+                </tr>
+                <tr class="main-row">
+                    <td>Visibility, km</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Min</td>
+                    <td>{{ historyForecast.dailysummary[0].minvism }}</td>
+                </tr>
+                <tr>
+                    <td>Max</td>
+                    <td>{{ historyForecast.dailysummary[0].maxvism }}</td>
+                </tr>
+                <tr class="main-row">
+                    <td>Precipitation, mm</td>
+                    <td>{{ historyForecast.dailysummary[0].precipm }}</td>
+                </tr>
+                <tr class="main-row">
+                    <td>Pressure, hPa</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Min</td>
+                    <td>{{ historyForecast.dailysummary[0].minpressurem }}</td>
+                </tr>
+                <tr>
+                    <td>Max</td>
+                    <td>{{ historyForecast.dailysummary[0].maxpressurem }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

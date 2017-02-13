@@ -1,0 +1,27 @@
+.navbar-form{
+    height: 40px;
+}
+.form-group{
+    margin-right: 15px;
+}
+.form-group>input{
+    width: 275px;
+    margin-bottom: 5px;
+}
+.list-group{
+    z-index: 20;
+    position: absolute;
+    width: 275px;
+}
+.list-group, .list-group-item{
+    background: #fff;
+}
+.list-group-item{
+    border: none;
+    color: #000;
+}
+.list-group-item:hover{
+    background: lightskyblue;
+    color: #fff;
+    cursor: pointer;
+}

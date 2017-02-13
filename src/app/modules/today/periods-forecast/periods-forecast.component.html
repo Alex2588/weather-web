@@ -1,0 +1,26 @@
+<div class="col-md-7 bhoechie-tab-container">
+    <div class="col-lg-3 col-md-3 bhoechie-tab-menu">
+        <div class="list-group" *ngFor="let period of periodsForecast">
+            <a class="list-group-item text-center" [class.active]="period.active" (click)="setActivePeriod(period)">
+                <h5>{{ period.title }}</h5>
+                <div>
+                    <img [src]="period.icon_url" alt="forecast image">
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-9 col-md-9 bhoechie-tab">
+        <!-- flight section -->
+        <div class="bhoechie-tab-content active">
+            <div class="period-detail-wrapper text-center" *ngIf="currentPeriod" [@showDetails]="state" (@showDetails.done)="animationFinished()">
+                <h5>Short forecast for {{ currentPeriod.title }}</h5>
+                <br>
+                <div>
+                    <img [src]="currentPeriod.icon_url" >
+                </div>
+                <br>
+                <h6>{{ currentPeriod.fcttext_metric }}</h6>
+            </div>
+        </div>
+    </div>
+</div>

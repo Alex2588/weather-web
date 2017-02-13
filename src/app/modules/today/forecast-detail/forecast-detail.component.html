@@ -1,0 +1,25 @@
+<div class="col-md-6 no-padding detail-container">    
+    <div class="detail-table col-md-4" *ngIf="todayForecast">
+        <h5 class="text-center"><b>DETAILS</b></h5>
+        <h6><b>Wind:</b> {{ todayForecast.wind_kph }} km/h, {{ todayForecast.wind_dir }}</h6>
+        <hr>
+        <h6><b>Humadity:</b> {{ todayForecast.relative_humidity }}</h6>
+        <hr>
+        <h6><b>Dew Point:</b> {{ todayForecast.dewpoint_c }}&deg;</h6>
+        <hr>
+        <h6><b>Visibility:</b> {{ todayForecast.visibility_km }} km</h6>
+        <hr>
+        <h6><b>Pressure:</b> {{ todayForecast.pressure_mb }} mb</h6>
+    </div>
+    <div class="detail-card col-md-8" *ngIf="todayForecast">
+        <h6 class="text-center">{{ todayForecast.display_location.full }}</h6>
+        <h2 class="text-center">{{ todayForecast.temp_c }}&deg;C</h2>
+        <div class="text-center icon">
+            <img [src]="todayForecast.icon_url" alt="">
+        </div>
+        <h3 class="text-center">{{ todayForecast.weather }}</h3>
+        <hr>
+        <h5 class="text-center">Wind: {{ todayForecast.wind_kph }} km/h</h5>
+        <h5 class="text-center">Feels like: {{ todayForecast.feelslike_c }}&deg;C</h5>
+    </div>
+</div>

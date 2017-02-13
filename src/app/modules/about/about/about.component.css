@@ -1,0 +1,18 @@
+div.col-md-12{
+    height: 700px;
+}
+div.about-page{
+    height: 200px;
+    background: #fff;
+    text-align: center;
+    margin-top: 100px;
+    margin-right: 15px;
+    padding-top: 80px;
+    border: 1px solid #ddd;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+div.about-page>h5{
+    color: #000;    
+}

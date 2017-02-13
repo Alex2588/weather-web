@@ -1,0 +1,8 @@
+nav.navbar{
+    border-radius: 0;
+    margin-bottom: 0;
+}
+div.logo>img{
+  height: 40px;
+  margin-right: 50px;
+}

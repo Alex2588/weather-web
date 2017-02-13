@@ -1,0 +1,17 @@
+<div class="center-block" *ngIf="isLoading">
+    <i class="fa fa-spinner fa-spin fa-5x"></i>
+</div>
+<div [@showPage]>
+    <section>
+        <div class="col-md-12">
+            <ww-forecast-detail [todayForecast]="todayForecast"></ww-forecast-detail>
+            <ww-map [currentCity]="currentCity"></ww-map>  
+        </div> 
+    </section>
+    <section>
+        <div class="col-md-12">
+            <ww-periods-forecast [periodsForecast]="periodsForecast"></ww-periods-forecast>
+            <ww-sun-moon-info [sunMoonInfo]="sunMoonInfo"></ww-sun-moon-info>
+        </div>
+    </section>
+</div>

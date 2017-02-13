@@ -1,0 +1,38 @@
+<div class="col-md-12">
+    <h4 class="text-center">10-day forecast</h4>
+    <div class="center-block" *ngIf="isLoading">
+        <i class="fa fa-spinner fa-spin fa-5x"></i>
+    </div>
+    <div class="cold-md-10" *ngIf="forecastInfo">
+        <h5>{{ currentCity.name }}</h5>
+        <table class="table" [@showPage]="state">
+            <thead>
+                <tr>
+                    <th>DAY</th>
+                    <th>WEATHER ICON</th>
+                    <th>DESCRIPTION</th>
+                    <th>HIGH/LOW, &deg;C</th>
+                    <th>HUMIDITY</th>
+                    <th>WIND</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dayInfo of forecastInfo">
+                    <td>
+                        <span>{{ dayInfo.date.weekday }}</span><br>
+                        <span>{{ dayInfo.date.day }} {{ dayInfo.date.monthname }}</span>
+                    </td>
+                    <td>
+                        <div>
+                            <img [src]="dayInfo.icon_url">
+                        </div>
+                    </td>
+                    <td>{{ dayInfo.conditions }}</td>
+                    <td>{{ dayInfo.high.celsius }}/{{ dayInfo.low.celsius }}</td>
+                    <td>{{ dayInfo.avehumidity }} %</td>
+                    <td>{{ dayInfo.avewind.dir }} {{ dayInfo.avewind.kph }} km/h</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

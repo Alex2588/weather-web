@@ -1,0 +1,35 @@
+nav.navbar.navbar-default{
+    background: #fff;
+    color: #000;
+    border-radius: 0;
+    margin-right: 15px;
+    border: 1px solid #ddd;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+nav.navbar.navbar-default>div>div{
+    padding-left: 0;
+}
+ul{
+    margin-top: 14px;
+}
+li{
+    list-style-type: none;
+    display: block;
+    text-align: center;
+    width: 18%;
+    float: left;
+}
+li>a{
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    font-size: 300;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+a.active-link{
+    padding-bottom: 4px;
+    border-bottom: 2px solid #0000ff;
+}

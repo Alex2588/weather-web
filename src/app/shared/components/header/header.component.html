@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="logo">
+        <img src="https://icons.wxug.com/logos/PNG/wundergroundLogo_4c_rev_horz.png">
+      </div>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active" *ngIf="todayForecast">
+          <a>{{todayForecast.temp_c }}&deg;C<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="active"><a >{{ currentCity.name }}<span class="sr-only">(current)</span></a></li>
+        <li class="active"><a >{{ date | date: 'fullDate' }}<span class="sr-only">(current)</span></a></li>
+      </ul>
+      <ww-city-search (selectedCity)="changeCurrentCity($event)"></ww-city-search>
+    </div>
+  </div>
+</nav>
