@@ -3,8 +3,6 @@ import { Http, Response } from '@angular/http';
 import { ForecastService } from '../../modules/today/today-forecast/forecast.service';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/distinctUntilChanged';
 import { City } from '../City';
 import { DEFAULT_CITY } from '../Default-City';
 
@@ -26,12 +24,10 @@ export class CitySearchService{
 
     getCities(query: string): Observable<any> {
         return this.http.get(this.cityURL + query)
-        .debounceTime(300)
-        .distinctUntilChanged()
-        .map(
-            (response: Response) => response.json()['RESULTS']
-        )
-        .catch(this.handleError)
+            .map(
+                (response: Response) => response.json()['RESULTS']
+            )
+            .catch(this.handleError);
     }
 
     setCurrentCity(city: City): void{

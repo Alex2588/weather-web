@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { TodayModule } from './modules/today/today.module';
 import { TodayForecastComponent } from './modules/today/today-forecast/today-forecast.component';
 
@@ -15,7 +15,9 @@ const APP_ROUTES: Routes = [
 @NgModule({
     imports: [ 
         TodayModule,
-        RouterModule.forRoot(APP_ROUTES) 
+        RouterModule.forRoot(APP_ROUTES,
+             {preloadingStrategy: PreloadAllModules}
+        ) 
     ],
     exports: [ RouterModule ]
 })

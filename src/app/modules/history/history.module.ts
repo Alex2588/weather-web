@@ -19,5 +19,5 @@ import { HistoryService } from './history/history.service';
 })
 
 export class HistoryModule{
-    
+
 }

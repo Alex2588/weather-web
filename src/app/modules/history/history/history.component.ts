@@ -34,6 +34,7 @@ export class HistoryComponent implements OnInit{
         }
         this.selectedMonth = this.months[0]['value'];
         this.selectedDate = this.dateList[0];
+    
     }
 
     ngOnInit(): void{
